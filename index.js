@@ -21,7 +21,7 @@ app.post("/register", (req, res) => {
   res.send("success");
 });
 app.get("/getdata", (req, res) => {
-  res.send(json.stringify(datas));
+  res.send(JSON.stringify(datas));
 });
 app.get("/", (req, res) => {
   res.send("");
