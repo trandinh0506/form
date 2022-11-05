@@ -14,6 +14,7 @@ fs.readFileSync(path.join(__dirname, "data.json"), "utf8", (err, data) => {
 });
 
 app.post("/register", (req, res) => {
+  console.log(req.body);
   let player = req.body.player;
   let group = req.body.group;
   datas.push({ player, group });
