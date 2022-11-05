@@ -21,6 +21,7 @@ app.post("register", (req, res) => {
   let group = req.body.group;
   datas.push({ player, group });
   fs.writeFileSync(path.join(__dirname, "data.txt"), JSON.stringify(datas));
+  res.send("success");
 });
 
 app.get("/getdatablabla", (req, res) => {
