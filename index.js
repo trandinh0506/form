@@ -21,7 +21,7 @@ app.post("/register", (req, res) => {
   res.send("success");
 });
 app.get("/getdata", (req, res) => {
-  res.sendFile(path.join(__dirname, "data.json"));
+  res.send(json.stringify(datas));
 });
 app.get("/", (req, res) => {
   res.send("");
