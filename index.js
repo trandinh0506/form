@@ -20,7 +20,11 @@ app.post("/register", (req, res) => {
   fs.writeFileSync(path.join(__dirname, "data.txt"), JSON.stringify(datas));
   res.send("success");
 });
-
+app.get("/getdata", (req, res) => {
+  if (req.params.pass == "get all data") {
+    res.sendFile(path.join(__dirname, "data.txt"));
+  } else res.send("pass error");
+});
 app.get("/", (req, res) => {
   res.send("");
 });
