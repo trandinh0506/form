@@ -21,9 +21,7 @@ app.post("/register", (req, res) => {
   res.send("success");
 });
 app.get("/getdata", (req, res) => {
-  if (req.params.pass == "get all data") {
-    res.sendFile(path.join(__dirname, "data.txt"));
-  } else res.send("pass error");
+  res.sendFile(path.join(__dirname, "data.txt"));
 });
 app.get("/", (req, res) => {
   res.send("");
