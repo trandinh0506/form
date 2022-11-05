@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json());
 
 var datas = [];
-fs.readFileSync(path.join(__dirname, "data.txt"), "utf8", (err, data) => {
+fs.readFileSync(path.join(__dirname, "data.json"), "utf8", (err, data) => {
   datas = JSON.parse(data);
 });
 
@@ -17,11 +17,11 @@ app.post("/register", (req, res) => {
   let player = req.body.player;
   let group = req.body.group;
   datas.push({ player, group });
-  fs.writeFileSync(path.join(__dirname, "data.txt"), JSON.stringify(datas));
+  fs.writeFileSync(path.join(__dirname, "data.json"), JSON.stringify(datas));
   res.send("success");
 });
 app.get("/getdata", (req, res) => {
-  res.sendFile(path.join(__dirname, "data.txt"));
+  res.sendFile(path.join(__dirname, "data.json"));
 });
 app.get("/", (req, res) => {
   res.send("");
