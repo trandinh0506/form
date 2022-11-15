@@ -10,6 +10,7 @@ app.use(express.json());
 
 app.post("/register", (req, res) => {
   let player = req.body.player;
+  console.log(player);
   fs.appendFileSync(path.join(__dirname, "data.txt"), player + "\n");
   res.send("true");
 });
